@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon blog</title>
+  <title>
+    <%= locals.title %>
+  </title>
+  <meta name="description" content="<%= locals.description %>">
+  <script src="https://kit.fontawesome.com/f5a1d28d53.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="text/javascript" defer src="/js/script.js"></script>
 </head>
+
 <body>
-<%- body %>
+  <div class="container">
+    <%- include('../partials/header.ejs') %>
+      <main class="main">
+        <%- body %>
+      </main>
+      <%- include('../partials/footer.ejs') %>
+  </div>
+
 </body>
+
 </html>
