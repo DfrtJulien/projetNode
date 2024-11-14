@@ -9,13 +9,19 @@
   <h2 class="articles__heading">Postes les plus récent</h2>
 
   <ul class="articles-ul">
+
+    <% data.forEach(post => { %>
     <li>
-      <a href="#">
-        <span>Titre du poste</span>
-        <span class="articles-list__date">Date</span>
+      <a href="/post/<%= post._id %>">
+        <span><%= post.title %></span>
+        <span><%= post.createAt.toDateString() %></span>
       </a>
     </li>
+    <% }) %>
   </ul>
 
-  <a href="#" class="pagination">&lt; Voir les postes plus ancien</a>
+  <% if (nextPage !== null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">&lt; Voir les postes plus ancien</a>
+  <% } %>
+ 
 </section>

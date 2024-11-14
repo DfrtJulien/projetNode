@@ -1,20 +1,22 @@
 const mongoose = require("mongoose");
 
-const Shema = mongoose.Schema;
+const Schema = mongoose.Schema;
 const PostSchema = new Schema({
   title: {
-    type: string,
+    type: String,
     required: true,
   },
   body: {
-    type: string,
+    type: String,
     requried: true,
   },
   createAt: {
-    deflaut: Date.now(),
+    type: Date,
+    default: Date.now(),
   },
   updatedAt: {
-    deflaut: Date.now(),
+    type: Date,
+    default: Date.now(),
   },
 });
 
