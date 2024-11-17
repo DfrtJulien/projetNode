@@ -4,14 +4,15 @@
 
 <section class="articles">
   <ul class="articles-ul">
-
-    <% data.forEach(post => { %>
-    <li>
-      <a href="/post/<%= post._id %>">
-        <span><%= post.title %></span>
-        <span><%= post.createAt.toDateString() %></span>
-      </a>
-    </li>
-    <% }) %>
+    
+      <% data.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post._id %>">
+            <span><%= post.title ? post.title : "Pas de poste trouvé"%></span>
+            <span><%= post.createAt.toDateString() %></span>
+          </a>
+        </li>
+        <% }) %>
+    
   </ul>
 </section>
